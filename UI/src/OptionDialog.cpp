@@ -32,13 +32,6 @@
 
 #include <QSplitter>
 
-#include <QWindowsStyle>
-#include <QWindowsXPStyle>
-#include <QWindowsVistaStyle>
-#include <QMacStyle>
-#include <QPlastiqueStyle>
-#include <QMotifStyle>
-
 #include <algorithm>
 
 #define DBUS_HAL_SERVICE            "org.freedesktop.Hal"
@@ -841,66 +834,6 @@ void OptionDialog::on_treeWidget_currentItemChanged(
 
 void OptionDialog::on_comboBoxTheme_currentIndexChanged(int index)
 {
-    ShowCustomThemeSetting(false);
-
-    switch(index)
-    {
-#ifdef _WIN32
-    case 0:
-        QApplication::setStyle(new QWindowsXPStyle());
-        break;
-
-    case 1:
-        QApplication::setStyle(new QWindowsVistaStyle());
-        break;
-
-    case 2:
-        QApplication::setStyle(new QPlastiqueStyle());
-        break;
-
-    case 3:
-        QApplication::setStyle(new QMotifStyle());
-        break;
-
-    case 4:
-        main_window_->setStyleSheet("background-image:url(:/images/background.jpg);");
-        break;
-
-    case 5:
-        QApplication::setStyle(new QWindowsStyle);
-
-        ShowCustomThemeSetting(true);
-
-        break;
-#else
-    case 0:
-        QApplication::setStyle(new QPlastiqueStyle());
-        break;
-
-    case 1:
-        QApplication::setStyle(new QMotifStyle());
-        break;
-
-    case 2:
-        main_window_->setStyleSheet("background-image:url(:/images/background.jpg);");
-        break;
-
-    case 3:
-        QApplication::setStyle(new QWindowsStyle);
-
-        ShowCustomThemeSetting(true);
-
-        break;
-#endif
-    }
-
-#ifdef _WIN32
-    if(index != 4)
-        main_window_->setStyleSheet("");
-#else
-    if(index != 2)
-        main_window_->setStyleSheet("");
-#endif
 }
 
 void OptionDialog::InitThemeItems()
@@ -1066,7 +999,7 @@ void OptionDialog::SetCurrentKey(int row)
     }
     else if(keyBorad.at(0).isLetter())
     {
-        index = keyBorad.at(0).toAscii() - 'A' + 12;
+        index = keyBorad.at(0).toLatin1() - 'A' + 12;
     }
     else
     {

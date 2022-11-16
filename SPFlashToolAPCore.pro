@@ -5,8 +5,11 @@
 #QT -= gui
 TARGET = flash_tool
 QT    += xmlpatterns
-QT += webkit network
+QT += widgets network concurrent
 #QT += testlib
+
+CFLAGS += -Wno-narrowing
+CXXFLAGS += -Wno-narrowing
 
 # CONFIG   += console
 #CONFIG -= app_bundle

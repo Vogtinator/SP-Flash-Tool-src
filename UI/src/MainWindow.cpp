@@ -46,6 +46,7 @@
 
 #include <QtDebug>
 #include <QtGui>
+#include <QtWidgets>
 #include <algorithm>
 
 MainWindow::MainWindow(QWidget *parent) :

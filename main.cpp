@@ -1,6 +1,5 @@
 #include <QtCore/QCoreApplication>
-#include <QtGui/QApplication>
-#include <QSplashScreen>
+#include <QtWidgets/QApplication>
 #include <QString>
 #include <iostream>
 #include <QDir>
@@ -42,11 +41,6 @@ static int runQtApplication(int argc, char *argv[])
     }
 
     QPixmap pixmap(":/images/FlashToolSplash.png");
-    QSplashScreen splash(pixmap);
-    splash.show();
-    splash.showMessage("SP Flash Tool is loading...\n\n\n\n\n\n\n\n\n\n\n\n\n"
-                       "   Copyright (c) 2001-2017, MediaTek Inc. All rights reserved."
-                       ,Qt::AlignBottom,Qt::gray);
 
     MainWindow w;
     IniItem item("option.ini", "Language", "CurrentLang");
@@ -57,7 +51,6 @@ static int runQtApplication(int argc, char *argv[])
     w.LoadLastAuthFile();
     w.show();
 
-    splash.finish(&w);
     return a.exec();
 }
 

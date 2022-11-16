@@ -22,7 +22,6 @@ SCIDownloadWidget::SCIDownloadWidget(QTabWidget* parent, MainWindow *window) :
     setAcceptDrops(true);
 
     ui->tableWidget->setHorizontalHeader(header_);
-    ui->tableWidget->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
 
     header_->SetChecked(true);
 

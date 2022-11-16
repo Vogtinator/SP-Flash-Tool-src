@@ -12,6 +12,7 @@
 
 #include <stdio.h>
 #include <QSettings>
+#include <QtWidgets>
 
 
 BromAdapterWidget::BromAdapterWidget(QTabWidget *parent, MainWindow *window) :

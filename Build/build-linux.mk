@@ -10,7 +10,7 @@ ifeq ($(OS),Ubuntu)
   QMAKE                         := qmake
 else
   # GDR - why would this be path-specific anyway?
-  QMAKE                         := /opt/QtSDK/Desktop/Qt/473/gcc/bin/qmake
+  QMAKE                         := qmake-qt5
 endif
 # << GDR - 20180617.01
 

@@ -5,6 +5,7 @@
 #include <QColor>
 #include <QShortcut>
 #include <QTimer>
+#include <QtWidgets>
 #include "../../Setting/ISetting.h"
 #include "../../Setting/ConnSetting.h"
 #include "../../ConsoleMode/GeneralSetting.h"
